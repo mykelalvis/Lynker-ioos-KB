@@ -1,5 +1,5 @@
 ---
-date updated: '2021-03-08T07:35:16-06:00'
+date updated: '2021-03-16T03:55:49-05:00'
 
 ---
 
@@ -7,25 +7,25 @@ date updated: '2021-03-08T07:35:16-06:00'
 
 > In order to bake an apple pie, you must first create the universe.  -- Dr. Carl Sagan
 
-A [[definitions#Deployment | deployment]] is the primary action associated with providing access to any given system.  The primary heavy-lift of a deployment is performed by Terraform.  In order to make it possible for Terraform to deal with deployments in a rational and manageable way, there are numerous requirements that must be fulfilled.
+A [[deployment | deployment]] is the primary action associated with providing access to any given system.  The primary heavy-lift of a deployment is performed by Terraform.  In order to make it possible for Terraform to deal with deployments in a rational and manageable way, there are numerous requirements that must be fulfilled.
 
 # Requirements
 
 Deploy should involve a process that has the following attributes:
 
-1. Have a well-defined [[definitions#Lifecycle|lifecycle]].
-2. Fed from a predefined and known (but not necessarily [[definitions#Release|released]] set of [[definitions#Artifact|artifacts]].
-3. Performed on a fully automated [[definitions#Environment|environment]].  Thus, a dependency of a given deployment is that the deployment for its environment has been performed successfully and the identity of that environment is known.
-4. Be downstream-destroyable from any point in the lifecycle.<br/>This means that for every step in the lifecycle, destruction would imply destruction of all downstream lifecycle states.<br/>When you destroy the root, you destroy the tree.
+1. Have a well-defined [[Lifecycle|lifecycle]].
+2. Fed from a predefined and known[^known] set of [[artifact|artifacts]].
+3. Performed on a fully automated [[environment|environment]].[^env1]
+4. Be downstream-destroyable from any point in the lifecycle, so that for every step in the lifecycle, destruction of this deployment implies destruction of all downstream lifecycle states.<br/>When you destroy the root, you destroy the tree.
 5. Have a unique identifier that denotes the specific deployment and allows for easy destruction
 6. Be safe enough to use in any given environment
 7. Be flexible enough to allow a given environment to change from the defined norm
 
 # Environmental Deployments
 
-In order to execute a deploy, it is necessary to produce the [[definitions#Environment|environment]] to which that deployment is intended to run.  This involves a cascading series of steps for each environmental deployment until the executor reaches the limits of its capacity.
+In order to execute a deploy, it is necessary to produce the [[environment|environment]] to which that deployment is intended to run.  This involves a cascading series of steps for each environmental deployment until the executor reaches the limits of its capacity.
 
-We refer to this form of [[Bootstrapping]] as the "apple pie" method, per Dr. Sagan's statement.
+We refer to this form of [[bootstrapping]] as the "apple pie" method, per Dr. Sagan's statement.
 
 For instance, to deploy to AWS, there are a number of requirements that must first be met:
 
@@ -41,17 +41,17 @@ These are decisions that must be made with forethought.
 
 # Precursor Environments
 
-It is also entirely possible for each of the above decisions to be _the entirety of an environment_, and thus a [[Dependency Management|dependency]] to a future environment.
+It is also entirely possible for each of the above decisions to be _the entirety of an environment_, and thus a [[dependency management|dependency]] to a future environment.
 
-If all environments require an account to target, then any environment that requires that specific account will [tautologically] point the same account.  Therefore it makes sense to produce precursor environments that perform basic setups that enable downstream environments to succeed more easily.
+If all environments require an account to target, then any environment that requires that specific account will [tautologically] point to the same account.  Therefore it makes sense to produce precursor environments that perform basic setups that enable downstream environments to succeed more easily.
 
-In a situation where the same account is used for both production environments and development environments, multiple roles would likely be necessary as the production resources would be considered inaccessible by the development resources.  These are probably known situations, and thus could be part of a precursor environment that gets built before any other environments are created.  The outputs of this precursor are then consumed downstream by the subsequent environmental builds.
+In a situation where the same account is used for both production environments and development environments, multiple roles would likely be necessary as the production resources would be considered inaccessible by the certain resources.  These are probably known situations, and thus could be part of a precursor environment that gets built before any other environments are created.  The outputs of this precursor are then consumed downstream by the subsequent environmental builds.
 
-The ability to define and execute precursor environments is frequently thought of as "setup", and is often performed manually.  The purpose of automation is to reduce the non-determinism that comes from manual work.  Thus, it should be the case that all (or at least as much as possible) of this work can be performed using a precursor deployment.+
+The ability to define and execute precursor environments is frequently thought of as "setup", and is often performed manually.  The purpose of automation is to reduce the non-determinism that comes from such manual work.  It should be the case that all (or at least as much as possible) of this work can be performed using a precursor deployment.
 
 Since multiple precursor environments could exist (5 instances of "develop" and 3 instances of "production"), it is necessary to perform some type of name-mapping to allow a subsequent environmental setup to select the proper precursor.
 
-Obviously, any given environment that is required is, in effect, a precursor environment to the given deployment.  For naming purposes, only the most durable of precursors will be referred to as such.
+Obviously, any given environment that is required is a dependency and is a precursor environment to the given deployment.  For naming purposes, only the most durable of precursors will be referred to as such.
 
 # Target Environment Determination
 
@@ -98,3 +98,6 @@ This application, most likely an Open one, is the opposite of Protected.  No gua
 For precursor environments, most resources are likely to be accessible downstream.  These are thus Open deployments.  Conversely, most applications have durable data that needs to be privately processed.  These are most likely Isolated Durable Protected deployments.
 
 TODO Add examples
+
+[^known]: but not necessarily [[release|released]] yet
+[^env1]:   Thus, a dependency of a given deployment is that the deployment for its [[environment]] has been performed successfully and the identity of that environment is known.
