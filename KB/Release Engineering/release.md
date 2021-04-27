@@ -86,28 +86,20 @@ graph TB
     relb[Build Intermediate Form] --> bif;
     bif{Intermediate Form Build Success?}
     bif -->|No|fail;
-<<<<<<< HEAD
-    bif -->|Yes|shouldpush;
+    bif -->|Yes|trdry2;
+    trdry2{Is this a dry-run?}
+    trdry2 -->|Yes| success;
+    trdry2 -->|No| shouldpush;
     shouldpush{Is git repo with remote origin?}
     shouldpush -->|Yes|push;
     shouldpush -->|No|saf;
-=======
-    bif -->|Yes|dry;
-    dry{Is this a dry-run?}
-    dry -->|No|saf;
-    dry -->|Yes|success;
     saf[Store Intermediate Form in Artifact Repository with Release Identity] --> push
     trdry{Is this a dry-run?}
     trdry -->|Yes| success;
     trdry -->|No| push;
->>>>>>> 32d4d87 (Move phases)
-    push[Push Tag to Remote Repo] -->
+    push[Push Tag to Remote Repo] --> success
+    fail ----> stop;
+    success ---> stop;
 
-    success --> stop;
-<<<<<<< HEAD
-    fail --> stop;
 ```
-=======
-    fail --> stop;```
 
->>>>>>> 32d4d87 (Move phases)
