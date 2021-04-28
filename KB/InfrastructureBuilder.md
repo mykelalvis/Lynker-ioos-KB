@@ -7,7 +7,7 @@ Tags: #fact
 
 # InfrastructureBuilder
 
-InfrastructureBuilder is an organization dedicated to applying solid [[Release Engineering]] principles to software delivery, and to providing a means for framing solid conversations around those principles externally.
+InfrastructureBuilder is an organization dedicated to applying [[Release Engineering]] principles to software delivery, and to providing a means for framing consistent and productive conversations around those principles externally.
 
 # Team
 

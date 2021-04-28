@@ -21,18 +21,18 @@ Some examples of artifact repositories are:
 
 ## Bad Examples
 
-Some **very** rudimentary storage locations, which might be used in a pinch, are:
+Some rudimentary storage locations, which might be used in a pinch, are:
 
 - Azure Artifacts - this artifact repository is, as of the time of this writing, severely limited in it's capabilities
 - GitHub Releases - a per-repository file storage mechanism, but convenient if a given team only produces a very small number of artifacts (i.e. one or two)
 - Jenkins' internal artifact store - entirely transient but useful during a Jenkins build
 - GitHub source repositories, using Tags - this is a [[tag release]].  It is also the default mechanism for some parts of some languages (notably `golang` libraries).
 
-These tend to have negative effects and/or side effects that can be difficult to detect or deal with.  They should be avoided, if at all possible.
+These tend to have negative effects and/or side effects that can be difficult to detect or deal with.
 
 ## Uses of an Artifact Repository
 
-An artifact repository is designed to be the [ostensibly] durable storage location of [[artifact]] instances for use by some target [[audience]]. The presence of an artifact in such a repository indicates that some degree of [[gatekeeping]] was performed on the [[build]].  Depending on the [[platform|platforms]] involved, sometimes this gatekeeping is "none", but the quality of the retained artifact is highly dependent on this.
+An artifact repository is designed to be the [ostensibly] durable storage location of [[artifact]] instances for use by some target [[audience]]. The presence of an artifact in such a repository often indicates that some degree of [[gatekeeping]] was performed on the [[build]].  Depending on the [[platform|platforms]] involved, sometimes this gatekeeping is "none", but the quality of the retained artifact is highly dependent on this.
 
 Typically, a build would store built artifacts into the artifact repository as a final step of the build.  This implies that the artifact then has some [[version]] (i.e a named identifier) that uniquely indicates the stored artifact.  This identifier can then be used later to retrieve the artifact, generally for use in some other process.
 
@@ -40,7 +40,7 @@ Typically, a build would store built artifacts into the artifact repository as a
 
 #### Container Registry
 
-Alice uses [Packer](https://packer.io) to build a [Docker](https://www.docker.com/) container.  She namespaces it `alicecontainer/emulsified` and gives it a version of `1.0.0`. Since Alice has access to an [[artifact repository]] at <https://myartifactrepo.org/dockerregistry>, as part of her Packer `.json` file Alice performs a `push` action to that repository.  There is now an artifact in that repository called `alicecontainer/emulsified:1.0.0`
+Alice uses [Packer](https://packer.io) to [[build]] a [Docker](https://www.docker.com/) container.  She namespaces it `alicecontainer/emulsified` and gives it a version of `1.0.0`. Since Alice has access to an [[artifact repository]] at <https://myartifactrepo.org/dockerregistry>, as part of her Packer `.json` file Alice performs a `push` action to that repository.  There is now an artifact in that repository called `alicecontainer/emulsified:1.0.0`
 
 Bob wants to use Alice's container as a basis for his `Dockerfile` build. He points his registry endpoint to  <https://myartifactrepo.org/dockerregistry> and bases his build on `alicecontainer/emulsified:1.0.0`.  Docker then tries to fetch the container during his build, allowing Bob to layer his filesystem over the `emulsified` container's filesystem.
 
