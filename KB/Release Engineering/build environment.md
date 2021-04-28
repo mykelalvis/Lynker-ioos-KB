@@ -23,7 +23,7 @@ Someone performing a [[release]] would need all the same types of credentials, b
 
 A build environment is produced much like any other [[environment]].  The environment's base is defined, such as "an operating system with the latest release of `python` 3.7 installed".
 
-The key to creating any environment is to define the initial [[environment|environmrnts]] that define acceptable base conditions.  Hopefully, careful planning was applied to the situation, allowing these these base environments to be portable across different types of installations.
+The key to creating any environment is to define the initial [[environment|environments]] that define acceptable base conditions.  Hopefully, careful planning was applied to the situation, allowing these these base environments to be portable across different types of installations.  Poor planning in these cases is the basis for having a [[magic build machine]].
 
 Once the base conditions are settled on, the act of producing an environment involves [[configuration management|applying some series of changes]].  If proper planning was applied, it is likely possible that these changes could be applied with a single set of [[IAC]] code for any given target environment.
 

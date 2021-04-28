@@ -1,5 +1,9 @@
-Cryptographic Signatures
-===
+---
+date updated: '2021-04-28T08:41:26-05:00'
+
+---
+
+# Cryptographic Signatures
 
 A common practice during the [[build]] process, and especially during the [[packaging]] phase of a build that produces an [[intermediate form]], is to cryptographically sign the resultant artifact.  This allows for the verification of [[binary identity]] for a given [[artifact]] which provides verification that a given key was used to sign the resultant intermediate collection of bytes.
 

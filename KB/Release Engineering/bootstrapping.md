@@ -1,5 +1,7 @@
 ---
-date updated: '2021-03-16T03:55:25-05:00'
+date updated: '2021-04-28T09:29:30-05:00'
+tags:
+  - '#bootstrapping'
 
 ---
 
@@ -11,7 +13,7 @@ As example, in order to have `S3` buckets for keeping [[Terraform]] state, you n
 
 However, creating the bucket by hand _also_ has some problems.
 
-Thus, you might write some automation (which stores its state _locally_) which produces a bucket to store subsequent state _remotely_.
+Thus, you might write some automation which stores its state _locally_.  This produces a bucket, which can then be used to store subsequent state _remotely_.
 
 The first automation is the "bootstrap", and is generally done either infrequently or with great caution.
 
@@ -67,6 +69,7 @@ This is _remote_ storage that is locally accessed as if it was _local_.  This mi
 The most relevant version of this is the [[Keybase#KBFS|KBFS]] filesystem, which can be used to perform this task.  It still requires configuring a provider, but that provider works against the local filesystem (the KBFS root for a user or team).
 
 For example:
+
 ```terraform
 terraform {
   required_providers {

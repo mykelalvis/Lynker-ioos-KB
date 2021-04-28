@@ -14,7 +14,7 @@ Specific to this discussion, the lifecycle of many software [[artifact|artifacts
     invalid[Exists but is not valid or valuable] -- work -->
     possible[Possibly valuable] -- gatekeeping -->
     valuable[Valuable] -- release -->
-    versioned[Versioned with an identifier] -- more work -->
+    identified[Identified, probably with a version] -- more work -->
     changed{Keep changes?}
     changed -->|Keep| possible;
     destroy[Destroy, retaining releases]
@@ -30,9 +30,9 @@ Specific to this discussion, the lifecycle of many software [[artifact|artifacts
    1. Return to step 3, becoming _possibly_ valuable again<br/>OR
    2. Be determined to no longer have value, to be removed from validity and destroyed.
 
-Any sort of [[artifact]] can and will transition through these (and often many more-specific) states.
+Any sort of [[artifact]] can and will transition through these states, and often many more-specific ones.
 
-- A document will be created,  updated, and eventually some indicator made of its state.
+- A document will be created,  updated, edited, accepted, reviewed, and eventually have some indicator made of its state.
 - A software repository will be able to be examined and found to be valuable and this have that state saved, perhaps through a [[release]].
 
 ## Outside the Lifecycle

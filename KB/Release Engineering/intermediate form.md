@@ -13,7 +13,9 @@ Most intermediate forms are best stored in some type of [[artifact repository]].
 
 ## Why Intermediate Forms?
 
-The intermediate form of an [[artifact]] is one that has had a [[build]] (and possibly a [[release]]) action applied to it.  Therefore, it has gone through all the build [[gatekeeping]] operations and certain criteria can be said about the intermediate form without forcing a repeat of the [[build]] that produced it -- it was produced by some build, probably detectable through a tag, and thus followed the criteria of _that tag's build_.
+The intermediate form of an [[artifact]] is one that has had a [[build]] (and possibly a [[release]]) action applied to it, producing some secondary resultant artifact.  Contrast this with a [[tag release]].  
+
+Since it has gone through all the build [[gatekeeping]] operations, certain statements can be made about the intermediate form without forcing a repeat of the [[build]] that produced it -- it was produced by some build, probably detectable through a tag, and thus followed the criteria of _that tag's build_.
 
 These gatekeeping operations are the total of ascribable quality that can be stated about the artifact.  Assuming that they are [[build#Repeatable|repeatable]], they can be thought of as the beginning of an audit trail on the artifact's provenance and quality.
 
