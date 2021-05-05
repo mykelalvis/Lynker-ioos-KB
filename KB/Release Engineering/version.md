@@ -10,7 +10,7 @@ date updated: '2021-04-28T09:25:07-05:00'
 <dd>the entire identifying signature of an artifact, possibly but not necessarily one that has gone through a release process</dd>
 </dl>
 
-A version of an artifact is the entire signature that formally identifies it.  Depending on the type of artifact, this might be as durable as the signature of a  compiled [[intermediate form]] stored in an [[artifact respository]], or it might be as transient as the URL of a [[tag release]] applied to a repository in [[GitHub]].
+A version of an artifact is the entire signature that formally identifies it.  Depending on the type of artifact, this might be as durable as the signature of a  compiled [[intermediate form]] stored in an [[artifact repository]], or it might be as transient as the URL of a [[tag release]] applied to a repository in [[GitHub]].
 
 Versions can are divided into mutable and immutable types.  Most software does not contain sufficient complexity to distinguish between the two explicitly, but this is rarely cause for concern (until it is).
 

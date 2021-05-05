@@ -20,7 +20,7 @@ One of the key elements of a release is the concept of immutability, which is th
 
 ### Sameness
 Once released, it is expected that the released artifact will remain _at least_ functionally identical across time and will _almost always_ remain binary identical.  
-Any good [[artifact respository]] will prevent changes to stored [[intermediate form]] [[artifact|artifacts]].  However, entropy is a real thing in the universe we inhabit.  This means that sometimes artifacts are corrupted (bad storage media, perhaps) or perhaps inadvertently deleted (by a fat-fingered trusted agent) or even maliciously removed (by an intrusive agent).  When forced to choose between functional identity and binary identity, functional identity is the more reasonable choice.
+Any good [[artifact repository]] will prevent changes to stored [[intermediate form]] [[artifact|artifacts]].  However, entropy is a real thing in the universe we inhabit.  This means that sometimes artifacts are corrupted (bad storage media, perhaps) or perhaps inadvertently deleted (by a fat-fingered trusted agent) or even maliciously removed (by an intrusive agent).  When forced to choose between functional identity and binary identity, functional identity is the more reasonable choice.
 
 ### Agency
 
