@@ -41,7 +41,7 @@ These are decisions that must be made with forethought.
 
 # Precursor Environments
 
-It is also entirely possible for each of the above decisions to be _the entirety of an environment_, and thus a [[dependency management|dependency]] to a future environment.
+It is also entirely possible for each of the above decisions to be _the entirety of an environment_, and thus a [[dependency]] to a future environment.
 
 If all environments require an account to target, then any environment that requires that specific account will [tautologically] point to the same account.  Therefore it makes sense to produce precursor environments that perform basic setups that enable downstream environments to succeed more easily.
 

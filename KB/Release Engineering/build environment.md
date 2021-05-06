@@ -13,7 +13,7 @@ All build environments are not created equally.  It is generally desirable to ha
 
 In instances where there are specific [[role|roles]] that deal with [[release]], [[testing]], and general development, some specific [[configuration management|configurations]] might exist that determine these roles.
 
-For example, a developer needs to [[build]] their code.  The build environment for that developer needs to be able to fetch [[dependency management|dependencies]], compile code, and perform other processes, such as a [[deployment]] to some `dev` [[environment]].  The requirements for that could be as simple as a pair of credentials, like an `ssh` key for dependencies and some cloud access key for deployment.
+For example, a developer needs to [[build]] their code.  The build environment for that developer needs to be able to fetch [[dependency|dependencies]], compile code, and perform other processes, such as a [[deployment]] to some `dev` [[environment]].  The requirements for that could be as simple as a pair of credentials, like an `ssh` key for dependencies and some cloud access key for deployment.
 
 A tester, on the other hand, might need to deploy to a different environment (`test`, perhaps).  This would necessitate the same types of credentials but with different values.
 
