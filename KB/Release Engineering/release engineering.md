@@ -14,6 +14,6 @@ It is a generally good idea to acquaint yourself with the [[definitions]] that w
 Release Engineering can be split into a few parts:
 
 - [[build management]]
-- [[dependency management]]
+- [[dependency#Management]]
 - [[artifact management]]
 - [[artifact management#Dispensation|artifact delivery]] (usually rolled into Artifact Management)

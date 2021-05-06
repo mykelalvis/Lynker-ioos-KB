@@ -21,7 +21,7 @@ A name should fully identify an [[artifact]], where "name" indicates the fully-q
 
 For purposes of portability, the "name" of an artifact will be called it's `artifactId`
 
-Names should include some namespace that groups similar items together.  Most packaging systems, [[dependency management]] systems, and [slug](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-slug/)-dependent [resolvers](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) use some form of namespace to allow the actual [[version|identity]] of an artifact to be different even though the short name might be the same.  So `X:Y` or `X/Y` uses `X` as the namespace and `Y` as the abbreviated name.
+Names should include some namespace that groups similar items together.  Most packaging systems, [[dependency#Management|dependency management]] systems, and [slug](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-slug/)-dependent [resolvers](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) use some form of namespace to allow the actual [[version|identity]] of an artifact to be different even though the short name might be the same.  So `X:Y` or `X/Y` uses `X` as the namespace and `Y` as the abbreviated name.
 
 > "You're in the Army?  I have a friend named 'Bill'.  He's in the Army.  Do you know him?"
 

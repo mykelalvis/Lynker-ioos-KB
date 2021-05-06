@@ -24,7 +24,7 @@ These gatekeeping operations are the total of ascribable quality that can be sta
 Many, possibly even most, languages produce some artifact as an intermediate form.
 
 - Java produces the `.jar` (Java Archive) artifact, which is a Zip file with some additional metadata files inside (`META-INF/MANIFEST.MF`).  Similar is the `.war` file, which is really just a `.jar` with a `WEB-INF/web.xml` tree inside.
-- Similar but somewhat different is a Java `ear` (enterprise archive), which often contains [[dependency management|internal dependencies]]
+- Similar but somewhat different is a Java `ear` (enterprise archive), which often contains [[dependency|internal dependencies]]
 - [NPM](https://www.npmjs.com/) packages
 - Platform-specific executable statically linked binaries produce by `golang` or `rust`
 - [RubyGems](https://rubygems.org/)
