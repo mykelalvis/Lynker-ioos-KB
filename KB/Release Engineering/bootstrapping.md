@@ -13,7 +13,7 @@ As example, in order to have `S3` buckets for keeping [[Terraform]] state, you n
 
 However, creating the bucket by hand _also_ has some problems.
 
-Thus, you might write some automation which stores its state _locally_.  This produces a bucket, which can then be used to store subsequent state _remotely_.
+Thus, you might write some automation which stores its state _locally_.  This produces a bucket, which can then be used to store subsequent state _remotely_.  One might consider the bootstrap action as a [[dependency]].
 
 The first automation is the "bootstrap", and is generally done either infrequently or with great caution.
 
