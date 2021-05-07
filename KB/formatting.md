@@ -1,11 +1,10 @@
 ---
 date updated: '2021-03-16T03:56:49-05:00'
-Tags: #formatting 
+Tags: 
+ - '#formatting '
 ---
 
 # Formatting
-
-Tags: #formatting
 
 [[InfrastructureBuilder]] has tried to keep the format of this vault reasonably consistent.
 
