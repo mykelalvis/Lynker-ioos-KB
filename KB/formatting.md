@@ -10,7 +10,9 @@ Tags:
 
 For tags that are not inline to text, we have a ` Tags:  ` text frontmatter (see above).
 
-On pages with horizontal rules `---` at the bottom, IB will not modify anything below that line.  It would be a reasonable place for your changes so that a rebase might work smoothly.  All other changes to IB text are at your own risk.
+On pages with horizontal rules `---` at the bottom, IB will not modify anything below that line.  It would be a reasonable place for your changes so that a rebase might work smoothly.  All other changes to IB text are at your own risk.  
+
+Add your license to your folder, and then make a link on the [[LICENSE]] page for everyone to see.
 
 All YAML Obsidian frontmatter should be left alone.
 
