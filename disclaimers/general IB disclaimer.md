@@ -4,7 +4,7 @@ date updated: '2021-03-08T07:29:39-06:00'
 ---
 Tags: #disclaimer
 
-First and foremost, note the [[LICENSE]]
+First and foremost, note the [[release-engineering vault LICENSE]]
 
 Second, this vault has no private information in it by default.  See #disclaimer tags for additional disclaimers, copyrights, terms of use, etc.
 
