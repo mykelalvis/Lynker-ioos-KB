@@ -20,7 +20,7 @@ A rekey is generally prompted when a person with some degree of access has had t
 
 ## Scopes
 
-There are numerous levels of rekeying action.
+There are numerous levels of rekeying action, but they tend to fit into two categor
 
 ### Specific Rekey
 
