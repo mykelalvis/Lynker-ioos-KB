@@ -92,3 +92,20 @@ provider "aws" {
 ```
 
 In this example, the KBFS filesystem is the target endpoint for the state file that [[Terraform]] is using.  Unfortunately, the `backend` setup within Terraform cannot use parameters or variables, so the `path =` must be set to conform to whatever root the KBFS takes.  On Linux, it is generally `/keybase` but on the Mac it is `/Volumes/kbfs`, and on Windows it defaults to `K:\`.  So the `path` above would need to be changed to reflect this..  This prefix needs to be handled prior to use to ensure that the local system is referencing the same shared state file in KBFS.
+
+One method that has proven effective is to create specific versions of this provider setup using pre-processing of the Terraform code and the default environmental settings from the provider
+
+```terraform
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> ${AWSVERSION}"
+    }
+  }
+  backend "local" {
+    path = "${KEYBASE_TEAM_ROOT}$/mykeybaseteam/somesubdirectory/bootstrap-state/terraform.tfstate"
+  }
+}
+
+```
