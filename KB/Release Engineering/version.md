@@ -17,8 +17,10 @@ A version of an artifact is the entire signature that formally identifies it.  D
 
 Versions can are divided into mutable and immutable types.  Most software does not contain sufficient complexity to distinguish between the two explicitly, but this is rarely cause for concern (until it is).
 
+### Mutable
 By convention, _mutable_ versions are considered transient and disposable.  That is, they have a short and indeterminate lifespan and, since they technically should be easy to replicate, can be thrown away at any time.  This conforms to the `-SNAPSHOT` concept present in [Maven](https://maven.apache.org).
 
+### Immutable
 In contrast, immutable versions should be retained in perpetuity.  They are never deleted or changed.  The expectation is that they will be available effectively forever.
 
 In theory, the artifact that an immutable version references under those _conventional_ circumstances would itself be considered _immutable_.
