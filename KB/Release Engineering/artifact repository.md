@@ -28,7 +28,7 @@ Some rudimentary storage locations, which might be used in a pinch, are:
 - Jenkins' internal artifact store - entirely transient but useful during a Jenkins build
 - GitHub source repositories, using Tags - this is effectively what constitutes a [[tag release]].  It is also the default mechanism for some parts of some languages (notably `golang` libraries).
 
-### Why Tag Releases Are Bad
+### Why Tag Releases Are Problematic
 Tag releases tend to have negative effects and/or side effects that can be difficult to detect or deal with.  Notably, a tag release of a repository that one does not completely control ___cannot even be considered truly immutable___.  Being under the control of someone outside the organization, that person can change the contents of a tag and the underlying systems will notice, but will often not complain.  It is _possible_ to determine that a tag release has not been mutated, but it certainly is neither automatic or convenient to do so.
 
 One (painful) way to deal with this is to fork such a repository and only pull in changes on a "per-tagging event" basis. This is very tedious and usually not worth the effort.  
