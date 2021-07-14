@@ -1,5 +1,5 @@
 ---
-date updated: '2021-03-16T03:55:49-05:00'
+date updated: '2021-07-13T20:20:02-05:00'
 
 ---
 
@@ -7,9 +7,9 @@ date updated: '2021-03-16T03:55:49-05:00'
 
 > In order to bake an apple pie, you must first create the universe.  -- Dr. Carl Sagan
 
-A [[deployment | deployment]] is the primary action associated with providing access to any given system.  The primary heavy-lift of a deployment is performed by Terraform.  In order to make it possible for Terraform to deal with deployments in a rational and manageable way, there are numerous requirements that must be fulfilled.
+A [[deployment | deployment]] is the primary action associated with providing access to any given system.  The primary heavy-lift of a deployment is often performed by an [[IAC]] tool like [[Terraform]].  In order to make it possible for Terraform to deal with deployments in a rational and manageable way, there are numerous requirements that must be fulfilled.
 
-# Requirements
+## Requirements
 
 Deploy should involve a process that has the following attributes:
 
@@ -21,7 +21,7 @@ Deploy should involve a process that has the following attributes:
 6. Be safe enough to use in any given environment
 7. Be flexible enough to allow a given environment to change from the defined norm
 
-# Environmental Deployments
+## Environmental Deployments
 
 In order to execute a deploy, it is necessary to produce the [[environment|environment]] to which that deployment is intended to run.  This involves a cascading series of steps for each environmental deployment until the executor reaches the limits of its capacity.
 
@@ -39,7 +39,7 @@ For instance, to deploy to AWS, there are a number of requirements that must fir
 It is possible that for any of the aforementioned steps, if a value is not available it should be created and added to the context of the nascent environment.
 These are decisions that must be made with forethought.
 
-# Precursor Environments
+## Precursor Environments
 
 It is also entirely possible for each of the above decisions to be _the entirety of an environment_, and thus a [[dependency]] to a future environment.
 
@@ -53,7 +53,7 @@ Since multiple precursor environments could exist (5 instances of "develop" and 
 
 Obviously, any given environment that is required is a dependency and is a precursor environment to the given deployment.  For naming purposes, only the most durable of precursors will be referred to as such.
 
-# Target Environment Determination
+## Target Environment Determination
 
 For a given deployment, a known set of conditions must exist.  From a clean slate in AWS, for instance, some form of root account email must be available in order to execute the deployment that will ultimately result in a "base precursor".
 The following labels will determine this for a given deployment:
@@ -63,33 +63,33 @@ The following labels will determine this for a given deployment:
 - If an environment is the _setup_ for an environment that will host an application, it will be called an "application base".  This might include seeded data and specific forms of access and values.  Its dependency would be a non-empty list of factory bases.  It is expected that a given application base contains the entirety of necessary resources to run some version of the application.
 - Applications are referred to as "application deployments".  They refer to some identifier of a single artifact that understands how to determine which application base the candidate application is meant to reside in, as well as any additional resources that are application-specific.<br/>Application deployments are specified by a unique identifier, and they contain an attribute that is their [version](definitions.md#version).
 
-# Types of Deployment
+## Types of Deployment
 
 Applications may be meant to be deployed alongside other applications, in which case shared resources would need to be extracted and placed in some precursor environment.  Conversely, they may be meant to live in an isolated world where they share no resources with anything outside of their environment.  This is an aspect of the artifacts used to deploy the application.
 
 The code used to deploy the application determines the type.  There are several attributes that might define how an application is meant to be deployed:
 
-## Isolated
+### Isolated
 
 This application must be protected from outside interference.  It likely has some form of input and some form of output, but none of its specific resources are meant to be accessible from any other application.
 
-## Open
+### Open
 
 The state of not being Isolated.  Open deployments may have published roles meant to allow other resources to use them.
 
-## Durable
+### Durable
 
 This application is stateful. When destroyed, its state must be preserved as part of the destruction and that state might be used as a dependency in future deployments of versions of this application.
 
-## Stateless
+### Stateless
 
 The opposite of Durable.  This application can be created and destroyed with abandon.  This is the classic stateless lambda (not a lambda-based application, which is likely to be Durable).
 
-## Protected
+### Protected
 
 This application, most likely an Isolated one, contains dangerous data and extra work should be done to ensure that this data is safely guarded.
 
-## Public
+### Public
 
 This application, most likely an Open one, is the opposite of Protected.  No guarantees about the privacy of the data in it are made.
 
