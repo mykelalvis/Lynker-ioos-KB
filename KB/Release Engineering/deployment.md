@@ -29,8 +29,44 @@ This is the simplest of the elements of a deployment.  Either there exists an ar
 ### Deployment Validation
 In order to start a deployment, it is necessary to understand what it means to succeed at that act.  If it is not known what the validation conditions are, then it seems difficult to ascertain that the work is complete.
 
+
+## Standard Deployment Conditions
+
+Sometimes, certain conditions are so common that they can be extracted to some centralized location and referenced at that location rather than repeating the steps.
+
+For instance, if one was meant to deploy an application to some cloud provider in the "production account", it is reasonable to expect that they need "production account" keys.  However, _it is **not reasonable** to fail to indicate those standard conditions at least once_.
+
+### Example Standard Deployment Conditions
+
+```
+# Standard Deployment Conditions for Production AWS Account Deployment
+
+## `direnv` installed
+
+Direnv is used to set environment variables during a deployment.  The direnv package must be locally available to the deployer.
+
+## Standard .envrc file
+The [[standard envrc file]] must be made available as part of the execution.  It is the responsibility of the deployer to select the proper .envrc.  
+The `.envrc` file must contain the following entries
+- `export AWS_ACCESS_ID={prod accessid}`
+- `export AWS_SECRET_ACCESS_KEY`
+*
+```
+
 ## Deployment Documentation
 
 Workable deployment documentation makes unabiguous statements regarding the actions and verifications associated with a deployment.  The lack of ambiguity is essential, as that allows for relatively digestable precondition/validation work, as noted above.
 
-A good de
+A good deployment document is usually:
+1. References standard deployment conditions.
+2. In the repository where someone is likely to be tasked with "doing a deployment"
+3. Is up-to-date
+4. Contains all the preconditions, indications of artifact, and validation mechanisms
+
+```
+# Deploy ThingX to AccountY in CloudProviderZ
+
+## Preconditions
+1. Permissions for CloudProviderZ in AccountY (eg. AWS Production account keys)
+2. Read permission for the artifact repo
+
