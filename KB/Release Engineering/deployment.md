@@ -70,10 +70,10 @@ A good deployment document is usually:
 2. In the repository where someone is likely to be tasked with "doing a deployment"
 3. Is up-to-date
 4. Contains all the preconditions, indications of artifact, and validation mechanisms
-5. Lives in a file called `deploy.md` 
+5. Lives in a file called `deploy.md` (this may vary for other organizations, but [[InfrastructureBuilder]] expects `deploy.md`)
 
 ```
-# Deploy ThingX to AccountY in CloudProviderZ
+# Deploy ThingX to Prod
 
 ## Preconditions
 1. [Standard prod deployment preconditions](https://github.com/myorg/mystandards/deploy/aws/prod.md)
@@ -90,12 +90,13 @@ A good deployment document is usually:
 3. `cp {STANDARD ENVRC FILE} .envrc`
 4. `direnv allow`
 5. `make`
-6. 
-6. `make deploy`
-7. Expect that 
+6. Expect "SUCCESS" message
+7. `export TARGETHOST=target.hostname.com`
+8. `make deploy`
+9. Expect "DEPLOYED SUCCESS" message
 
 ## Validation Conditions
-1. `curl `
+1. `curl https://${TARGETHOST}:8143/thingX` should return `{ status: "ok"}` and http code 200.
 
 
 ```
