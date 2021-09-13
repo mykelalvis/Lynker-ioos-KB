@@ -38,19 +38,27 @@ For instance, if one was meant to deploy an application to some cloud provider i
 
 ### Example Standard Deployment Conditions
 
+Such a file might exist in a subdirectory of a repo called `deploy/aws/prod.md`
+
 ```
 # Standard Deployment Conditions for Production AWS Account Deployment
 
-## `direnv` installed
+## `direnv` 
 
 Direnv is used to set environment variables during a deployment.  The direnv package must be locally available to the deployer.
 
 ## Standard .envrc file
 The [[standard envrc file]] must be made available as part of the execution.  It is the responsibility of the deployer to select the proper .envrc.  
-The `.envrc` file must contain the following entries
-- `export AWS_ACCESS_ID={prod accessid}`
-- `export AWS_SECRET_ACCESS_KEY`
-*
+
+The `.envrc` file must contain _at least_ the following entries:
+- `export AWS_ACCESS_KEY_ID={prod accessid}`
+- `export AWS_SECRET_ACCESS_KEY={prod secret access key}`
+- `export DEPLOYER=$(user)`
+
+## Read access
+
+The deployer needs read access to the specfic artifact as part of an artifact resolution chain within the [[artifact repository]].
+
 ```
 
 ## Deployment Documentation
@@ -62,11 +70,34 @@ A good deployment document is usually:
 2. In the repository where someone is likely to be tasked with "doing a deployment"
 3. Is up-to-date
 4. Contains all the preconditions, indications of artifact, and validation mechanisms
+5. Lives in a file called `deploy.md` 
 
 ```
 # Deploy ThingX to AccountY in CloudProviderZ
 
 ## Preconditions
-1. Permissions for CloudProviderZ in AccountY (eg. AWS Production account keys)
-2. Read permission for the artifact repo
+1. [Standard prod deployment preconditions](https://github.com/myorg/mystandards/deploy/aws/prod.md)
+2. Read access to `ThingXNamespace/ThingX` version according to deployment request
+3. Acquire artifact `ThingXNamespace/Preconditions/3.1.1` prior to deployment, as version 3.1.1 of the ThingXNamespace/Precodnitions must be deployed before ThingX is deployed.
+4. Deploy `ThingXNamespace/Preconditions/3.1.1` according to `Preconditions/deploy.md` 
 
+## Artifact
+`ThingXNamespace/ThingX`
+
+## Deployment Steps
+1. `mkdir workdir`
+2. `cd workdir`
+3. `cp {STANDARD ENVRC FILE} .envrc`
+4. `direnv allow`
+5. `make`
+6. 
+6. `make deploy`
+7. Expect that 
+
+## Validation Conditions
+1. `curl `
+
+
+```
+
+It should be obvious that step 4 includes the verification conditions associated with `ThingXNamespace/Preconditions/3.1.1` deployments.
