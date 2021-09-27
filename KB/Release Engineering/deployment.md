@@ -13,7 +13,7 @@ Deployment is typically the most human-intensive of the automatable processes th
 
 The goal of a good automated [[release engineering]] process is to reduce the number and frequency of those interventions.  The hopeful target of this is reduction to zero, where the entire process can be automated.
 
-## Deployment Steps
+## Deployment Elements
 
 A deployment is broken up into several parts
 
@@ -33,11 +33,11 @@ Validation should be a binary outcome -- either a deployment validates (whatever
 #### Deployment Failure Remediation
 In the event of a deployment validation failure, the expected general act is to destroy the deployment and restart.  Any other act will almost certainly produce a nondeterministic starting point for activity.  
 
-That is not to say that the [failed] deployment cannot be observered, debugged, or manipulated in some other way; only that the [[deployment]] failed and thus little may be said about it beyond that failure _relative to the state of the deployment_.  
+That is not to say that the [failed] deployment cannot be observed, debugged, or manipulated in some other way; only that the [[deployment]] failed and thus little may be said about it beyond that failure _relative to the future state of that specific deployment_.  All that really just means that it is invalid to depend on a failed deployment.
 
 ### Redeployment
 
-Redeployment is risky business.  Updating in-place, while it tends to produce good results in the time axis, produces poor results regarding [[risk]].  Producing some form of [[blue-green deployment]] rather than updating an existing resource is usually more advisable (assuming the availability of resources, etc). 
+Updating existing deployments in-place is risky business.  Redeployment tends to produce good results in the time axis, and increasingly greater [[risk]].  Producing some form of [[blue-green deployment]] rather than updating an existing resource is usually more advisable (assuming the availability of resources, etc). 
 
 However, most people want to think their situation is unique.  Thus, redeploys are a real thing.  
 
@@ -48,7 +48,7 @@ However, most people want to think their situation is unique.  Thus, redeploys a
 
 Sometimes, certain conditions are so common that they can be extracted to some centralized location and referenced at that location rather than repeating the steps.
 
-The first and most consistent condition is the ability to acquire the [[#Deployable Artifact]].
+The first and most consistent condition is the ability of the deployer to acquire the [[#Deployable Artifact]].
 
 In addition, if one was meant to deploy an application to some cloud provider in the nominal "production account", it is reasonable to expect that they need "production account" keys.  However, _it is **not reasonable** to fail to indicate those standard conditions at least once_.
 
