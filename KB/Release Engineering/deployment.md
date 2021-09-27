@@ -21,13 +21,28 @@ The goal of a good automated release engineering process is to reduce the number
 A deployment is broken up into several parts
 
 ### Deployable Artifact
-This is the simplest of the elements of a deployment.  Either there exists an artifact to deploy, or there exists no deployment.  There are a lot of ways to mince words about that, but those things inevitably lead to non-deterministic outcomes or error.
+This is the simplest of the elements of a deployment.  Either there exists an [[artifact]] to deploy, or there exists no deployment.  There are a lot of ways to mince words about that, but those things inevitably lead to non-deterministic outcomes or error.
+
+If a deployment requires multiple artifacts to be deployed, then any other required deployments are themselves [[#Deployment Preconditions|preconditions]].
 
 ### Deployment Preconditions
 These are the preconditions that are [necessary and sufficient](https://en.wikipedia.org/wiki/Necessity_and_sufficiency) to allow a deployment to commence.  These preconditions are, themselves, frequently independenty deployments that have their _own_ preconditions, such as with a #bootstrapping effort.
 
 ### Deployment Validation
-In order to start a deployment, it is necessary to understand what it means to succeed at that act.  If it is not known what the validation conditions are, then it seems difficult to ascertain that the work is complete.
+In order to start a deployment, it is necessary to understand what it means to succeed at that act.  If it is not known what the validation conditions are, then it would be difficult to ascertain that the work is complete.
+
+Validation should be a binary outcome -- either a deployment validates (whatever that means) or it fails.  
+
+#### Deployment Failure Remediation
+In the event of a deployment validation failure, the expected general act is to destroy the deployment and restart.  Any other act will almost certainly produce a nondeterministic starting point for activity.  
+
+That is not to say that the [failed] deployment cannot be observered, debugged, or manipulated in some other way; only that the [[deployment]] failed and thus little may be said about it beyond that failure _relative to the state of the deployment_.  
+
+### Redeployment
+
+Redeployment is risky business.  Updating in-place, while it tends to produce good results in the time axis, produces poor results regarding [[risk]].  
+
+However, most people want every situation to be unique.  
 
 
 ## Standard Deployment Conditions
