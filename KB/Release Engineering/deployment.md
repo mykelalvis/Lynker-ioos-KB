@@ -20,11 +20,11 @@ The goal of a good automated release engineering process is to reduce the number
 
 A deployment is broken up into several parts
 
-### Deployment Preconditions
-These are the preconditions that are [necessary and sufficient](https://en.wikipedia.org/wiki/Necessity_and_sufficiency) to allow a deployment to commence.  These preconditions are, themselves, frequently deployments that have their _own_ preconditions, such as a #bootstrapping effort.
-
 ### Deployable Artifact
 This is the simplest of the elements of a deployment.  Either there exists an artifact to deploy, or there exists no deployment.  There are a lot of ways to mince words about that, but those things inevitably lead to non-deterministic outcomes or error.
+
+### Deployment Preconditions
+These are the preconditions that are [necessary and sufficient](https://en.wikipedia.org/wiki/Necessity_and_sufficiency) to allow a deployment to commence.  These preconditions are, themselves, frequently independenty deployments that have their _own_ preconditions, such as with a #bootstrapping effort.
 
 ### Deployment Validation
 In order to start a deployment, it is necessary to understand what it means to succeed at that act.  If it is not known what the validation conditions are, then it seems difficult to ascertain that the work is complete.
