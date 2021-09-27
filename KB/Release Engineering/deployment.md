@@ -40,16 +40,20 @@ That is not to say that the [failed] deployment cannot be observered, debugged, 
 
 ### Redeployment
 
-Redeployment is risky business.  Updating in-place, while it tends to produce good results in the time axis, produces poor results regarding [[risk]].  
+Redeployment is risky business.  Updating in-place, while it tends to produce good results in the time axis, produces poor results regarding [[risk]].  Producing some form of [[blue-green deployment]] rather than updating an existing resource is usually more advisable (assuming the availability of resources, etc). 
 
-However, most people want every situation to be unique.  
+However, most people want to think their situation is unique.  Thus, redeploys are a real thing.  
+
+#TODO Write more about what a terrible idea in-place redeployments are
 
 
 ## Standard Deployment Conditions
 
 Sometimes, certain conditions are so common that they can be extracted to some centralized location and referenced at that location rather than repeating the steps.
 
-For instance, if one was meant to deploy an application to some cloud provider in the "production account", it is reasonable to expect that they need "production account" keys.  However, _it is **not reasonable** to fail to indicate those standard conditions at least once_.
+The first and most consistent condition is the ability to acquire the [[#Deployable Artifact]].
+
+In addition, if one was meant to deploy an application to some cloud provider in the nominal "production account", it is reasonable to expect that they need "production account" keys.  However, _it is **not reasonable** to fail to indicate those standard conditions at least once_.
 
 ### Example Standard Deployment Conditions
 
@@ -80,9 +84,9 @@ The deployer needs read access to the specfic artifact as part of an artifact re
 
 Workable deployment documentation makes unabiguous statements regarding the actions and verifications associated with a deployment.  The lack of ambiguity is essential, as that allows for relatively digestable precondition/validation work, as noted above.
 
-A good deployment document is usually:
+A good deployment document usually:
 1. References standard deployment conditions.
-2. In the repository where someone is likely to be tasked with "doing a deployment"
+2. Is in the repository where someone is likely to be tasked with "doing a deployment"
 3. Is up-to-date
 4. Contains all the preconditions, indications of artifact, and validation mechanisms
 5. Lives in a file called `deploy.md` (this may vary for other organizations, but [[InfrastructureBuilder]] expects `deploy.md`)
