@@ -38,9 +38,7 @@ It is a goal of good build practices to make a build as transportable as possibl
 
 For practical purposes, [[continuous integration]] is impossible for builds that are not independent.
 
-### Completion
-
-Note that the _actual drive for executing a build process is to _ _**fail**_.
+### Quality
 
 This may seem counter-intuitive, but the quality of an [[artifact]] is actually the sum total of the criteria by which it had to pass in order to actually be created.
 
@@ -48,4 +46,9 @@ Possibly more clearly, the testing and validation that an [[artifact]] _successf
 
 Everything else is an _opinion_ about quality, for practical purposes, and should be discarded.
 
-With the combination of increasingly more complex [[lifecycle]] steps and [[gatekeeping]] operations, the [[build]]/[[release]] process intrinsically produces [[artifact|artifacts]] that have gone through an increasingly more difficult set of known steps to determine their viability and quality by way of those [[gatekeeping]] operations.
+Note that the _actual drive for executing a build process is to _ _**fail**_.  This is in order to have a means for rejecting anything that can be determined to be of less-than-desireable quality.
+
+
+### Completion
+
+With the combination of increasingly more complex [[lifecycle]] steps and [[gatekeeping]] operations, the [[build]]/[[release]] process intrinsically produces [[artifact]]s that have gone through an increasingly more difficult set of known steps to determine their viability and quality by way of those [[gatekeeping]] operations.
