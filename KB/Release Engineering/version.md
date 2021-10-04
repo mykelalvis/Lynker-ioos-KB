@@ -5,10 +5,7 @@ date updated: '2021-04-28T09:25:07-05:00'
 
 # Version
 
-<dl>
-<dt>version</dt>
-<dd>the entire identifying signature of an artifact, possibly but not necessarily one that has gone through a release process</dd>
-</dl>
+> the entire identifying signature of an artifact, possibly but not necessarily one that has gone through a release process
 
 ## Meta Definition
 Wikipedia has [a brief article](https://en.wikipedia.org/wiki/Software_versioning) on the subject, but it does not entirely mesh with this definition.
