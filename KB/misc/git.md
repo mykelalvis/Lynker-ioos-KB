@@ -14,7 +14,17 @@ Collections of source in git are referred to by name as a repository.  The name 
 Git is ostensibly a distributed source code repository system, although it is rarely used as such.  Every "clone" of a git repository is a full copy of all the history of that repository, and any clone can be used to update another clone.  In practice, most git work is done in a centralized fashion, using a service such as GitHub or BitBucket
 
 ## Branching
-Git provides a mechanism for local and lightweight [branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
+Git provides a mechanism for local and lightweight [branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).  These branches, when applied to the various [[#Services]] that are available to host git, often allow for relatively fine-grained control of the source on an individual or team basis.
+
+### Branching Strategy
+Because they are lightweight, the population of branches served by git could quickly grow out of control.  A "branching strategy" is usually adopted by teams, allowing them to predict what a branch is for, when it can and cannot be merged, and when it can be deleted.
+
+[Examples](https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy) of branching strategies are available.  Picking the correct one for a given team is a decision that needs to be carefully considered.
+
+## Merges
+Git allows the [merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) of code with a common commit ancestry.   Maintaining continuity with history within git is not _required_, but is _highly recommended_.
+
+Merges are the application of changes from one branch onto another.  There are numerous variations of this.  Relevant details are available in the above link.
 
 ## Services
 
