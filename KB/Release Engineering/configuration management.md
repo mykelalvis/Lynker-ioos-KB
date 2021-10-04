@@ -36,6 +36,8 @@ These are obviously simplistic examples, but demonstrate _some_ of the criteria 
 
 Configuration management concerns itself with producing an output (the [[environment]]) that can be determined to be valid or not.  A valid environment is one that possesses all the relevant attributes; an invalid environment violates one or more of those attributes.
 
+Note that true determinism, especially in the philosophical sense, is basically impossible without direct access to omnipotence and omniscience.
+
 ### Temporal Determinism
 
 Temporal determinism is available only by inspection of the environment[^oxymoron].  This is almost always the result of a reliance on "temporal requirements", which themselves rely on temporal external factors.  Temporal requirements are usually easily detected due to non-specific temporal language, like "most recent" or "latest".
@@ -52,7 +54,7 @@ Objective determinism is achieved when it is possible to determine that a criter
 
 Contrary to the above example, "has the latest security patches applied as of 2021-03-18" is not temporal; it is true or it is not at all times.  Once the patches have been applied once, that condition is valid forever.  It might not be a good idea, but it remains valid.
 
-Another instance is "depends on the latest version of dependency XYZ".  This is another "temporal" situation.  The "latest" version of a dependency is not under local control.  Contrast this with "depends on XYZ-1.2.3".  The specific version implies an objectively deterministic outcome.
+Assuming a [[release#Immutability|sane release strategy]], another instance is "depends on the latest version of dependency XYZ".  This is another "temporal" situation.  The "latest" version of a dependency is not under local control.  Contrast this with "depends on XYZ-1.2.3".  The specific version implies an objectively deterministic outcome.
 
 ### Local Control
 
