@@ -15,6 +15,8 @@ Environments are instances of [[platform]]s that have well-defined criteria asso
 
 Working machine(s) geared toward specific tasks are environments.  They require certain tools to perform whatever tasks a developer requires.  Configuration should be applied to that machine, preferably using [[IAC]], to force a given [[platform]] into the appropriate state.
 
+[[InfrastructureBuilder]] recommends a file in the [[deployment#Deployment Preconditions|deployable]] that describes how to achieve the desired state.
+
 ## Recursion
 
 > ["Ya can't get theah from heah"](https://www.urbandictionary.com/define.php?term=you%20can%27t%20get%20there%20from%20here) -- Resident of Maine c. forever

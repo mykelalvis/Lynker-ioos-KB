@@ -22,10 +22,14 @@ This is the simplest of the elements of a deployment.  Either there exists an [[
 
 If a deployment requires multiple artifacts to be deployed, then any other required deployments are themselves [[#Deployment Preconditions|preconditions]].
 
+
+
 ### Deployment Preconditions
 These are the preconditions that are [necessary and sufficient](https://en.wikipedia.org/wiki/Necessity_and_sufficiency) to allow a deployment to commence.  These preconditions are, themselves, frequently independenty deployments that have their _own_ preconditions, such as with a #bootstrapping effort.
 
 The preconditions of a [[deployment]] are simply the creation of an [[environment]] in which to perform that deployment.
+
+[[InfrastructureBuilder]] recommends placing a file describing the artifact's deployment preconditions into the deployable artifact itself or deployed directly alongside the artifact in an [[artifact repository]]
 
 ### Deployment Validation
 In order to start a deployment, it is necessary to understand what it means to succeed at that act.  If it is not known what the validation conditions are, then it would be difficult to ascertain that the work is complete.
