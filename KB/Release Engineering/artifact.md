@@ -1,9 +1,7 @@
 ---
-date updated: '2021-04-28T13:56:15-05:00'
-tags:
-  - '#TODO'
-
-aliases : [artifacts]
+date updated: '2021-10-08T07:58:24-05:00'
+aliases:
+  - artifacts
 
 ---
 
@@ -35,5 +33,3 @@ A [[release|released]] artifact has attributes beyond those of an unreleased art
 
 - Artifacts are generally [[version|versioned]].
 - An unreleased artifact _probably_ has a [transient] version, but the resulting artifact is not fixed and therefore cannot be relied on without additional risk above that of a fixed version.
-
-#TODO
