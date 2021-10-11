@@ -29,7 +29,7 @@ These are the preconditions that are [necessary and sufficient](https://en.wikip
 
 The preconditions of a [[deployment]] are simply the creation of an [[environment]] in which to perform that deployment.
 
-[[InfrastructureBuilder]] recommends placing a file describing the artifact's deployment preconditions into the deployable artifact itself or deployed directly alongside the artifact in an [[artifact repository]]
+[[InfrastructureBuilder]] recommends placing a file describing the artifact's deployment preconditions into the deployable artifact itself or deployed directly alongside the artifact in an [[artifact repository]]	
 
 ### Deployment Validation
 In order to start a deployment, it is necessary to understand what it means to succeed at that act.  If it is not known what the validation conditions are, then it would be difficult to ascertain that the work is complete.
