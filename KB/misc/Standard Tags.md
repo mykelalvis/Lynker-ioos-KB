@@ -7,4 +7,4 @@ All resources should present, at a minimum, the following pieces of information 
 -   `Owner` : An entity, by local account identifier, that owns the resource.  This should be some notification target
 -   `CostCenter` : A [[Cost Center]] designation
 -   `Source` : The artifact that was used to create this resource (e.g. `org.infrastructurebuilder:OrangeAde:1.2.3` )
--   `Environment` : The identifying name of an [[environment]] that this resource belongs to. (probably `io.rialtic:OrangeAde:1.2.3:zip:prod` based on above)
+-   `Environment` : The identifying name of an [[environment]] that this resource belongs to. (probably `io.infrastructurebuilder:OrangeAde:1.2.3:zip:prod` based on above)
