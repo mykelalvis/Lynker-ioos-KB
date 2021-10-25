@@ -47,8 +47,6 @@ Updating existing deployments in-place is risky business.  Redeployment tends to
 
 However, most people want to think their situation is unique.  Thus, redeploys are a real thing.  
 
-#TODO Write more about what a terrible idea in-place redeployments are
-
 
 ## Standard Deployment Conditions
 
