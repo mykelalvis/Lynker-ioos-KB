@@ -1,10 +1,11 @@
 ---
-date updated: '2021-03-03T11:24:00-06:00'
+date updated: '2021-10-29T06:27:27-05:00'
 
 ---
 
-README
-======
+# README
+
+--- 
 
 Some useful links from here are:
 
@@ -21,4 +22,3 @@ Some useful links from here are:
 You might want to use this as an [[Upstream]] repository for your own vault.
 
 ---
-
