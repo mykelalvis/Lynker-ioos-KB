@@ -33,6 +33,8 @@ All these statements might make it seem that we aren't interested deeply interes
 
 The general KB content is Copyright 2021- by Mykel Alvis (<mykel.alvis@infrastructurebuilder.org>)
 
+Feel free to work with and remix the CC licensed content here.
+
 ---
 
 
