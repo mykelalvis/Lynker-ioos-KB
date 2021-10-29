@@ -3,6 +3,12 @@ date updated: '2021-03-08T07:29:39-06:00'
 
 ---
 
+# Disclaimers
+
+---
+
+## Infrastructurebuilder Disclaimer 
+
 First and foremost, note the [[release-engineering vault LICENSE]]
 
 Second, this vault has no private information in it by default.  See below for additional disclaimers, copyrights, terms of use, etc.
