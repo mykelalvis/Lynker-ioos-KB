@@ -5,9 +5,13 @@ date updated: '2021-03-08T07:29:39-06:00'
 
 # Disclaimers
 
+This page contains any disclaimers or claims to copyright for a known quantity of material.
+
 ---
 
 ## Infrastructurebuilder Disclaimer 
+
+[[InfrastructureBuilder]] content resides in the `KB/` path of this knowledge base.
 
 First and foremost, note the [[release-engineering vault LICENSE]]
 
