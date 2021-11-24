@@ -6,7 +6,7 @@ tags:
 ---
 # HIPAA Enforcement Rule
 
-The [HIPAA Enforcement Rule](https://www.hhs.gov/hipaa/for-professionals/special-topics/enforcement-rule/index.html) contains
+The [HIPAA Enforcement Rule](https://www.hhs.gov/hipaa/for-professionals/special-topics/enforcement-rule/) contains
 > provisions relating to compliance and investigations, the imposition of civil money penalties for violations of the HIPAA Administrative Simplification Rules, and procedures for hearings.  
  
 The HIPAA Enforcement Rule is codified at 45 CFR Part 160, Subparts C, D, and E.
