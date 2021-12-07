@@ -14,7 +14,7 @@ The build is one of the most common software activities.  It is the process by w
 
 Frequently, a build has some ceremony around it.  One such task would be invoking a "build tool", such as `make` or `mvn` or `rake`.
 
-Given proper management, a build will execute on some well-defined [[environment]] and will defile a [[lifecycle]] for success.  The outcome of traversing the lifecycle states should be identifiable as either an [[artifact]] (which we might care about) or a "failed build" (which we would likely discard) through a failure in one or more aspects of [[gatekeeping]].
+Given proper management, a build will execute on some well-defined [[environment]] and will define a [[lifecycle]] for success.  The outcome of traversing the lifecycle states should be identifiable as either an [[artifact]] (which we might care about) or a "failed build" (which we would likely discard) through a failure in one or more aspects of [[gatekeeping]].
 
 ## Attributes
 
