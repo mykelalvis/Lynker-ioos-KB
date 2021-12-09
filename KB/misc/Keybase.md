@@ -6,6 +6,8 @@ Tags: #fact
 
 # Keybase
 
+`URL: ` https://keybase.io
+
 Keybase is a key sharing service that allows secure team interactions, with key management, chat, and [[#KBFS|file sharing]].  Keybase interactions are encrypted end-to-end, although with keys managed by the service itself.
 
 # KBFS
