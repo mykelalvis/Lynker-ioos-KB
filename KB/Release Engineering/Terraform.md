@@ -20,6 +20,14 @@ Work in [[#HCL]] can be subdivided into [modules](https://www.terraform.io/docs/
 ## Registry
 A "registry" is a set of available [[#Providers]] and [[#Modules]] that the Terraform executable can access directly.  At present, the only known registry is [[#Cloud|Terraform Cloud]].
 
+## State
+
+Terraform has the concent of a "state" file, which is simply what Terraform thinks some set of resources should look like.  As long as the state and reality are identical, a `terraform plan` should be [[idempotence|idempotent]].  However, when Terraform's state differs from the target's state, commonly referred to as "drift", the plan would be for Terraform to apply changes to that target to make it conform to _what the local set of [[#HCL]] specifies_.  
+
+## Backends
+Terraform state will be storred in a local file by default.  However, different [[#Providers]] may allow [different storage mechanisms](https://www.terraform.io/docs/language/settings/backends/index.html) for the state. Most of these are remote, allowing other users to utilize and plan using that remote state.  Terraform [[#Cloud]] is the only officially supported backend, but many others exist.
+
+
 ## Cloud
 
 [Terraform Cloud](https://app.terraform.io/) is a Terraform [[#Registry]].
