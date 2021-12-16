@@ -7,15 +7,15 @@ date updated: '2021-07-13T20:20:02-05:00'
 
 > In order to bake an apple pie, you must first create the universe.  -- Dr. Carl Sagan
 
-A [[deployment | deployment]] is the primary action associated with providing access to any given system.  The primary heavy-lift of a deployment is often performed by an [[IAC]] tool like [[Terraform]].  In order to make it possible for Terraform to deal with deployments in a rational and manageable way, there are numerous requirements that must be fulfilled.
+A [[deployment]] is the primary action associated with providing access to any given system.  The primary heavy-lift of a deployment is often performed by an [[IAC]] tool like [[Terraform]].  In order to make it possible for Terraform to deal with deployments in a rational and manageable way, there are numerous requirements that must be fulfilled.
 
 ## Requirements
 
 Deploy should involve a process that has the following attributes:
 
-1. Have a well-defined [[Lifecycle|lifecycle]].
-2. Fed from a predefined and known[^known] set of [[artifact|artifacts]].
-3. Performed on a fully automated [[environment|environment]].[^env1]
+1. Have a well-defined [[Lifecycle]].
+2. Fed from a predefined and known[^known] set of [[artifact]]s.
+3. Performed on a fully automated [[environment]].[^env1]
 4. Be downstream-destroyable from any point in the lifecycle, so that for every step in the lifecycle, destruction of this deployment implies destruction of all downstream lifecycle states.<br/>When you destroy the root, you destroy the tree.
 5. Have a unique identifier that denotes the specific deployment and allows for easy destruction
 6. Be safe enough to use in any given environment
@@ -23,7 +23,7 @@ Deploy should involve a process that has the following attributes:
 
 ## Environmental Deployments
 
-In order to execute a deploy, it is necessary to produce the [[environment|environment]] to which that deployment is intended to run.  This involves a cascading series of steps for each environmental deployment until the executor reaches the limits of its capacity.
+In order to execute a deploy, it is necessary to produce the [[environment]] to which that deployment is intended to run.  This involves a cascading series of steps for each environmental deployment until the executor reaches the limits of its capacity.
 
 We refer to this form of [[bootstrapping]] as the "apple pie" method, per Dr. Sagan's statement.
 
@@ -61,7 +61,7 @@ The following labels will determine this for a given deployment:
 - If an environment is truly a "base precursor", then the only inputs would be some configuration that denotes whatever root credentials and setup information are necessary to produce that dependency.
 - If an environment is some subsequent configuration atop a base precursor (examples might be "development environments in each AWS region"), then it will refer to the output identifier of its base precursor as a dependency.  These would be called "factory bases".
 - If an environment is the _setup_ for an environment that will host an application, it will be called an "application base".  This might include seeded data and specific forms of access and values.  Its dependency would be a non-empty list of factory bases.  It is expected that a given application base contains the entirety of necessary resources to run some version of the application.
-- Applications are referred to as "application deployments".  They refer to some identifier of a single artifact that understands how to determine which application base the candidate application is meant to reside in, as well as any additional resources that are application-specific.<br/>Application deployments are specified by a unique identifier, and they contain an attribute that is their [version](definitions.md#version).
+- Applications are referred to as "application deployments".  They refer to some identifier of a single artifact that understands how to determine which application base the candidate application is meant to reside in, as well as any additional resources that are application-specific.<br/>Application deployments are specified by a unique identifier, and they contain an attribute that is their [[version]].
 
 ## Types of Deployment
 
