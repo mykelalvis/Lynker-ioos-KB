@@ -32,7 +32,7 @@ Note that "repeatable" does not imply that the [[artifact]] produced by a build 
 
 A build that only works on a singular specific environment might also be referred to as a "bad".  
 
-This phenomenon, often known as the "magic build machine" or "works on my machine" build, depends on specific and often difficult-to-replicate criteria for the [[environment]] in which it builds.  Quite often, the reason for success on one platform and failure on another is unknown even to the originator of the code.
+This phenomenon, often known as the "[[magic build machine]]" or "works on my machine" build, depends on specific and often difficult-to-replicate criteria for the [[environment]] in which it builds.  Quite often, the reason for success on one platform and failure on another is unknown even to the originator of the code.
 
 It is a goal of good build practices to make a build as transportable as possible.  This can be accomplished by making it as independent of a specific local environment as is reasonable.  This does not mean that a build should automagically work on **any** environment.  Rather this means that the build defines a set of environmental criteria that are required in order for the build to be performed reliably.
 
