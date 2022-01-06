@@ -8,4 +8,4 @@ Python libraries are packaged and usually managed through `setuptools`, a built-
 
 ## Executable
 
-A Python executable is just a top-level script that getsset
+A Python executable is just a top-level script that gets executed within the shell (i.e. `python mycoolprogram`)
