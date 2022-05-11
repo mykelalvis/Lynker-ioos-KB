@@ -1,5 +1,7 @@
 ---
 date updated: '2021-03-16T03:56:25-05:00'
+aliases: [releases, released artifacts]
+
 
 ---
 

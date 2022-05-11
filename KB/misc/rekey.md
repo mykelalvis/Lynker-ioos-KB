@@ -14,13 +14,13 @@ Rekeying is the act of dropping old keys and applying new ones.  It's identical 
 A rekey is generally prompted when a person with some degree of access has had that access compromised.  There are numerous reasons why this might be the case:
 
 1. Someone might have been terminated.  Now their access constitutes a liability.
-2. Someone might have had a breach of the systems where the keys are stored.  Now the existing keys constitute a liability.
-3. It might be time to recycle keys, which should be done on some scheduled basis.
-4. It might be time to practice a rekeying effort, even though none needs to be done.
+2. Someone might have had a breach of the systems where the keys are stored.  Now all of those existing keys constitute a liability.
+3. It might be time to recycle keys, which should probably be done on some scheduled basis.
+4. It might just be time to practice a rekeying effort, even though none is actually required.
 
 ## Scopes
 
-There are numerous levels of rekeying action.
+There are numerous levels of rekeying action, but they tend to fit into two easily understandable categories.
 
 ### Specific Rekey
 
