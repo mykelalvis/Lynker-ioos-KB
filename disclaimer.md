@@ -1,6 +1,7 @@
 ---
 date updated: '2021-03-08T07:29:39-06:00'
 
+tags: [fact]
 ---
 
 # Disclaimers
@@ -23,7 +24,7 @@ Any conversation or discussion regarding this information should be conducted in
 
 If you take issue with any of the content of this vault, consider the following:
 
-- Some things in this vault are facts.  If possible, they _may_ be denoted as #fact
+- Some things in this vault are facts.  If possible, they _may_ be denoted as fact
 - But a lot of this is \(frequently _only_\) the opinions of the [[InfrastructureBuilder]] team.
 - The opinions of others, including these, are not good reasons to incite you to anger, disrespect, or general rudeness.
 - If you feel there is a factual error to corrected, please file a [GitHub Issue](https://github.com/infrastructurebuilder/release-engineering-vault/issues) to start a discussion

@@ -1,3 +1,5 @@
 .*
 !.gitignore
 Changelog.md
+KB
+*-Private
