@@ -17,12 +17,12 @@ The head nodes for a [[Coastal Sandbox Cluster]] are currently the exclusive pur
 ### Target Worker Images
 The [[worker node]]s each have a specific [[machine image]] allowing them to be started as quickly as possible.  There are several elements to the production of an image for a worker node:
 
-#### [[Worker Node]] [[Dependency]] Identification
-Worker nodes will require certain types of configuration in order to execute a given model.  As the execution depends on having this configuration correctly performed, each of these items is labeled as a [[dependency]].  
+#### [[Worker Node]] [[KB/Release Engineering/dependency]] Identification
+Worker nodes will require certain types of configuration in order to execute a given model.  As the execution depends on having this configuration correctly performed, each of these items is labeled as a [[KB/Release Engineering/dependency]].  
 
 Essentially *any tool or data* that needs to be present can be considered a dependency.  This includes nominal "configuration", "forcing data", "model data", "model code" and the associated compilers and/or languages, required code dependencies for a given set of code, configured permissions to execute that code, configured networking to allow communication back to the [[#Head Node]] and to any other location with which the worker node needs to communicate.
 
-[[#Model Acquisition]] could be considered a [[dependency]] of the worker node, once [[#Model Determination]] has been made.
+[[#Model Acquisition]] could be considered a [[KB/Release Engineering/dependency]] of the worker node, once [[#Model Determination]] has been made.
 
 ##### Network Share 
 Frequently, for shared data, a network connection to a single specific data location is a dependency.

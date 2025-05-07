@@ -2,7 +2,7 @@
 tags: [Lynker]
 ---
 The [[Lynker]] [[IOOS]] team consists of 
-- [[Nels]]
+- [[Nels Frazier]]
 - [[Zach]]
 - [[Katherine]]
 - [[Mykel]]
